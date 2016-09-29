@@ -1,0 +1,64 @@
+(ns app.picture
+  (:require [hoplon.bidi :as bidi]
+            [app.routing :as routing]))
+
+(def images {:1 "http://mrmrs.io/photos/v/022.jpg"
+             :2 "http://mrmrs.io/photos/v/024.jpg"
+             :3 "http://mrmrs.io/photos/050.jpg"
+             :4 "http://mrmrs.io/photos/049.jpg"
+             :5 "http://mrmrs.io/photos/051.jpg"
+             :6 "http://mrmrs.io/photos/u/001.jpg"
+             :7 "http://mrmrs.io/photos/u/002.jpg"
+             :8 "http://mrmrs.io/photos/u/003.jpg"
+             :9 "http://mrmrs.io/photos/u/004.jpg"})
+
+(def backgrounds {:1 "bg-light-gray"
+                  :2 "bg-white"
+                  :3 "bg-near-white"
+                  :4 "bg-light-gray"
+                  :5 "bg-near-white"
+                  :6 "bg-white"
+                  :7 "bg-light-purple"
+                  :8 "bg-moon-gray"
+                  :9 "bg-washed-red"})
+
+(def params (bidi/route-params routing/routes))
+
+(def param-id (cell= (:id params)))
+
+(def image (cell= (get-in images [(keyword param-id)])))
+
+(def bg (cell= (get-in backgrounds [(keyword param-id)])))
+
+(defc enlarge nil)
+
+(cell= (prn image))
+
+(defelem index [attr kids]
+  (main :class (cell= (conj [bg] :cf :pa3 :pa4-m :pa5-l :mw-100 :min-vh-100 :center))
+    (div :class "fr w-100 w-80-l"
+      (p :class "f6" "Beitrage zut")
+      (a :class "link dim black hover-mid-gray"
+        (h1 :class "f2 f1-l lh-title mt0 mb4 mb5-ns"
+          "Kunst"
+          (br :class "dn db-ns")
+          "des 19. und 20.Jahrhunderts")))
+    (div :class "f6 lh-copy fl w-100 mb4"
+      (div :class "fl-ns w-100 w-20-l pr3-m pr5-l"
+        (p "Jahrbuch" (small :class "fw6" "1968/69")))
+      (div :class "fl-ns w-50-m w-20-l pr3-m pr5-l"
+        (p "Institut suisse pour l'étude de l'art"))
+      (div :class "fl-ns w-50-m w-20-l pr3-m pr5-l"
+        (p "Schweizerisches" (br :class "dn db-l") "Institut für Kunstwissenschaft"))
+      (div :class "fl-ns w-50-m w-20-l pr3-m pr5-l"
+        (p "Istituto svizzero di studi d'arte"))
+      (div :class "fl-ns w-50-m w-20-l pr3-m pr5-l"
+        (p "Swiss Institute for Art Research")))
+    (if-tpl enlarge
+      (div :class (cell= (conj [bg] [:absolute :top-0 :right-0 :bottom-0 :left-0 :w-100 :z-999]))
+        (img :src image
+             :class "absolute top-0 right-0 bottom-0 left-0 w-100 pointer"
+             :role "presentation"))
+        (img :src image
+             :class "db center grow pointer dim"
+             :role "presentation"))))

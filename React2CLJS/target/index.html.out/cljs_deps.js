@@ -20,7 +20,9 @@ goog.addDependency("../bidi/schema.js", ['bidi.schema'], ['bidi.bidi', 'schema.c
 goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
 goog.addDependency("../cuerdas/core.js", ['cuerdas.core'], ['goog.string', 'cljs.core', 'clojure.set', 'clojure.string', 'cljs.reader', 'clojure.walk']);
 goog.addDependency("../hoplon/bidi.js", ['hoplon.bidi'], ['bidi.bidi', 'schema.core', 'javelin.core', 'hoplon.jquery', 'cljs.core', 'hoplon.core', 'bidi.schema', 'cuerdas.core']);
-goog.addDependency("../hoplon/app_pages/_index_DOT_html.js", ['hoplon.app_pages._index_DOT_html'], ['app.home', 'hoplon.bidi', 'javelin.core', 'hoplon.jquery', 'cljs.core', 'hoplon.core']);
+goog.addDependency("../app/routing.js", ['app.routing'], ['javelin.core', 'hoplon.jquery', 'cljs.core', 'hoplon.core']);
+goog.addDependency("../app/picture.js", ['app.picture'], ['hoplon.bidi', 'javelin.core', 'hoplon.jquery', 'app.routing', 'cljs.core', 'hoplon.core']);
+goog.addDependency("../hoplon/app_pages/_index_DOT_html.js", ['hoplon.app_pages._index_DOT_html'], ['app.home', 'hoplon.bidi', 'javelin.core', 'hoplon.jquery', 'app.routing', 'cljs.core', 'hoplon.core', 'app.picture']);
 goog.addDependency("../clojure/browser/event.js", ['clojure.browser.event'], ['cljs.core', 'goog.events.EventTarget', 'goog.events.EventType', 'goog.events']);
 goog.addDependency("../clojure/browser/net.js", ['clojure.browser.net'], ['goog.net.xpc.CfgFields', 'goog.net.XhrIo', 'goog.json', 'goog.Uri', 'cljs.core', 'goog.net.EventType', 'goog.net.xpc.CrossPageChannel', 'goog.net.WebSocket', 'clojure.browser.event']);
 goog.addDependency("../adzerk/boot_reload/connection.js", ['adzerk.boot_reload.connection'], ['cljs.core', 'clojure.browser.net']);

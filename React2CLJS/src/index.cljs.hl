@@ -1,11 +1,9 @@
 (page "index.html"
   (:require [hoplon.bidi :as bidi]
-            [app.home :as home])
+            [app.routing :as routing]
+            [app.home :as home]
+            [app.picture :as pic])
   (:require-macros [hoplon.bidi :refer [route-tpl]]))
-
-(def routes ["" {#{"" "/"}  :index                ;; Can match "" or "/" or "#" or "#/"
-                 "/picture" {["/" :id] :picture}  ;; Must match "/picture/:id"
-                 true       :not-found}])         ;; Catch Anything Else)
 
 (html
   (head
@@ -22,7 +20,7 @@
     (link :rel "stylesheet" :href "Home.css")
     )
   (body
-    (route-tpl routes
+    (route-tpl routing/routes
       :index (home/index)
-      :picture (div :id "picture")
+      :picture (pic/index)
       :not-found (div :id "missing"))))

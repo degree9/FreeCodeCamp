@@ -1,0 +1,5 @@
+(ns app.routing)
+
+(def routes ["" {#{"" "/"}  :index                ;; Can match "" or "/" or "#" or "#/"
+                 "/picture" {["/" :id] :picture}  ;; Must match "/picture/:id"
+                 true       :not-found}])         ;; Catch Anything Else)

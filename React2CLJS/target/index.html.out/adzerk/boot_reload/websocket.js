@@ -30,23 +30,23 @@ throw cljs.core.missing_protocol.call(null,"IWebSocket.open?",this$);
 });
 
 adzerk.boot_reload.websocket.websocket_connection = (function adzerk$boot_reload$websocket$websocket_connection(var_args){
-var args12254 = [];
-var len__7513__auto___12257 = arguments.length;
-var i__7514__auto___12258 = (0);
+var args12264 = [];
+var len__7513__auto___12267 = arguments.length;
+var i__7514__auto___12268 = (0);
 while(true){
-if((i__7514__auto___12258 < len__7513__auto___12257)){
-args12254.push((arguments[i__7514__auto___12258]));
+if((i__7514__auto___12268 < len__7513__auto___12267)){
+args12264.push((arguments[i__7514__auto___12268]));
 
-var G__12259 = (i__7514__auto___12258 + (1));
-i__7514__auto___12258 = G__12259;
+var G__12269 = (i__7514__auto___12268 + (1));
+i__7514__auto___12268 = G__12269;
 continue;
 } else {
 }
 break;
 }
 
-var G__12256 = args12254.length;
-switch (G__12256) {
+var G__12266 = args12264.length;
+switch (G__12266) {
 case 0:
 return adzerk.boot_reload.websocket.websocket_connection.cljs$core$IFn$_invoke$arity$0();
 
@@ -60,7 +60,7 @@ return adzerk.boot_reload.websocket.websocket_connection.cljs$core$IFn$_invoke$a
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args12254.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args12264.length)].join('')));
 
 }
 });
@@ -116,10 +116,10 @@ goog.net.WebSocket.prototype.clojure$browser$event$IEventType$ = true;
 goog.net.WebSocket.prototype.clojure$browser$event$IEventType$event_types$arity$1 = (function (this$){
 var this$__$1 = this;
 return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,((function (this$__$1){
-return (function (p__12261){
-var vec__12262 = p__12261;
-var k = cljs.core.nth.call(null,vec__12262,(0),null);
-var v = cljs.core.nth.call(null,vec__12262,(1),null);
+return (function (p__12271){
+var vec__12272 = p__12271;
+var k = cljs.core.nth.call(null,vec__12272,(0),null);
+var v = cljs.core.nth.call(null,vec__12272,(1),null);
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 });})(this$__$1))
 ,cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.net.WebSocket.EventType))));
