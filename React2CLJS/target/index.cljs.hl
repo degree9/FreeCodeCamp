@@ -1,1 +1,5 @@
 (page "index.html")
+
+(html
+  (head)
+  (body))
