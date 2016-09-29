@@ -1,5 +1,6 @@
 (page "index.html"
-  (:require [hoplon.bidi :as bidi])
+  (:require [hoplon.bidi :as bidi]
+            [app.home :as home])
   (:require-macros [hoplon.bidi :refer [route-tpl]]))
 
 (def routes ["" {#{"" "/"}  :index                ;; Can match "" or "/" or "#" or "#/"
@@ -11,9 +12,17 @@
     (html-meta :charset "utf8")
     (html-meta :name "viewport" :content "width=device-width, initial-scale=1")
     (link :rel "shortcut icon" :href "favicon.ico")
-    (title "React2Cljs App"))
+    (title "React2Cljs App")
+
+    ;; Tachyons CSS
+    (link :rel "stylesheet" :href "https://unpkg.com/tachyons@4.5.3/css/tachyons.min.css")
+    ;; App CSS
+    (link :rel "stylesheet" :href "App.css")
+    ;; Home CSS
+    (link :rel "stylesheet" :href "Home.css")
+    )
   (body
     (route-tpl routes
-      :index (div :id "app")
+      :index (home/index)
       :picture (div :id "picture")
       :not-found (div :id "missing"))))
