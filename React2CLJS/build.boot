@@ -7,7 +7,8 @@
                    [degree9/boot-semver       "1.3.6"         :scope "test"]
                    [pandeiro/boot-http        "0.7.3"         :scope "test"]
                    [hoplon/boot-hoplon        "0.3.0-SNAPSHOT"]
-                   [hoplon/hoplon             "6.0.0-alpha17"]]
+                   [hoplon/hoplon             "6.0.0-alpha17"]
+                   [hoplon/brew               "0.2.0-SNAPSHOT"]]
  :resource-paths #{"src"})
 
 ;; Require Boot Task Namespaces ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

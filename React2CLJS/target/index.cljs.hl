@@ -1,4 +1,10 @@
-(page "index.html")
+(page "index.html"
+  (:require [hoplon.bidi :as bidi])
+  (:require-macros [hoplon.bidi :refer [route-tpl]]))
+
+(def routes ["" {#{"" "/"}  :index                ;; Can match "" or "/" or "#" or "#/"
+                 "/picture" {["/" :id] :picture}  ;; Must match "/picture/:id"
+                 true       :not-found}])         ;; Catch Anything Else)
 
 (html
   (head
@@ -6,4 +12,8 @@
     (html-meta :name "viewport" :content "width=device-width, initial-scale=1")
     (link :rel "shortcut icon" :href "favicon.ico")
     (title "React2Cljs App"))
-  (body))
+  (body
+    (route-tpl routes
+      :index (div :id "app")
+      :picture (div :id "picture")
+      :not-found (div :id "missing"))))
