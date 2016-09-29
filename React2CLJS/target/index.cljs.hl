@@ -5,6 +5,11 @@
             [app.picture :as pic])
   (:require-macros [hoplon.bidi :refer [route-tpl]]))
 
+(defelem not-found [attr kids]
+  (div :class "dt w-100 h-100 pv4 ph2 tc "
+    (div :class "dtc v-mid"
+      (h1 :class "f1 mt0" "404 Page Not Found"))))
+
 (html
   (head
     (html-meta :charset "utf8")
@@ -23,4 +28,4 @@
     (route-tpl routing/routes
       :index (home/index)
       :picture (pic/index)
-      :not-found (div :id "missing"))))
+      :not-found (not-found))))

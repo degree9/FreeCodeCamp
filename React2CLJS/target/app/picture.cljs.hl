@@ -26,9 +26,9 @@
 
 (def param-id (cell= (:id params)))
 
-(def image (cell= (get-in images [(keyword param-id)])))
+(def image (cell= (when param-id (get-in images [(keyword param-id)]))))
 
-(def bg (cell= (get-in backgrounds [(keyword param-id)])))
+(def bg (cell= (when param-id (get-in backgrounds [(keyword param-id)]))))
 
 (defc enlarge nil)
 
@@ -55,7 +55,7 @@
       (div :class "fl-ns w-50-m w-20-l pr3-m pr5-l"
         (p "Swiss Institute for Art Research")))
     (if-tpl enlarge
-      (div :class (cell= (conj [bg] [:absolute :top-0 :right-0 :bottom-0 :left-0 :w-100 :z-999]))
+      (div :class (cell= (conj [bg] :absolute :top-0 :right-0 :bottom-0 :left-0 :w-100 :z-999))
         (img :src image
              :class "absolute top-0 right-0 bottom-0 left-0 w-100 pointer"
              :role "presentation"))

@@ -86,7 +86,7 @@ var more = cljs.core.nthnext.call(null,vec__10842,(1));
 var vec__10843 = clojure.string.split.call(null,f,/\./,(2));
 var f1 = cljs.core.nth.call(null,vec__10843,(0),null);
 var f2 = cljs.core.nth.call(null,vec__10843,(1),null);
-return clojure.string.join.call(null,"/",cljs.core.reverse.call(null,cljs.core.conj.call(null,more,clojure.string.join.call(null,".",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [[cljs.core.str(f1),cljs.core.str("."),cljs.core.str("84deb243de174c918d6441026cfb673c")].join(''),f2], null)))));
+return clojure.string.join.call(null,"/",cljs.core.reverse.call(null,cljs.core.conj.call(null,more,clojure.string.join.call(null,".",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [[cljs.core.str(f1),cljs.core.str("."),cljs.core.str("0baf96a2067d490bb7c5cb15fda91e6a")].join(''),f2], null)))));
 });
 hoplon.core.child_vec = (function hoplon$core$child_vec(this$){
 var x = this$.childNodes;
