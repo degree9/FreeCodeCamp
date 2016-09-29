@@ -1,5 +1,9 @@
 (page "index.html")
 
 (html
-  (head)
+  (head
+    (html-meta :charset "utf8")
+    (html-meta :name "viewport" :content "width=device-width, initial-scale=1")
+    (link :rel "shortcut icon" :href "favicon.ico")
+    (title "React2Cljs App"))
   (body))
