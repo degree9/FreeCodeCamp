@@ -1,14 +1,21 @@
-(ns app.home)
+(ns app.home
+  (:require [hoplon.jquery]
+            [hoplon.bidi :as bidi]
+            [app.routing :as routing]))
 
 (defelem index [attr kids]
   (main :class [:w-100 :cf :helvetica :dark-gray :bg-white :pa3 :pa4-m :pa5-l :mw9 :center]
     (div :class [:fl :w-50 :pr2 :pr3-l :mb3 :mb4-l]
+         :click #(bidi/route! routing/routes :picture :id :1)
       (div :class [:cover :pv5 :pv6-m :pv7-l :pic1 :grow :pointer]))
     (div :class [:fl :w-50 :w-25-l :pl2 :pr2-m :ph2-l :mb3 :mb4-l]
+         :click #(bidi/route! routing/routes :picture :id :2)
       (div :class "cover pv5 pv6-m pv7-l pic2 grow pointer"))
     (div :class "fl w-50 w-50 w-25-l pr2 pr0-l pl3-l mb3 mb4-l"
+         :click #(bidi/route! routing/routes :picture :id :3)
       (div :class "cover pv5 pv6-m pv7-l pic3 grow pointer"))
     (div :class "fl w-50 w-50 w-25-l pl2 pl0-l pr2-m pr4-l mb3 mb4-l"
+         :click #(bidi/route! routing/routes :picture :id :4)
       (div :class "cover pv5 pv6-m pv7-l pic4 grow pointer"))
     (div :class "fl w-100 w-50-l pr2-l pl2-ns mb4 mb0-l mb4 outline"
       (div :class [:pa4])
@@ -25,6 +32,7 @@
           in the nature of the project.")))
     (div :class "cf"
       (div :class "fl w-100 w-25-l pl3-l mb3 mb4-l"
+           :click #(bidi/route! routing/routes :picture :id :5)
         (div :class "cover pv5 pv6-m pv7-l pic5 grow pointer"))
       (div :class [:fl :w-100 :w-25-l :pr3-l]
         (p :class "lh-copy measure f6 pt3 pt0-l mt0 mb3 mb4-l center"
@@ -57,10 +65,14 @@
           than a constricting device."))
       (div :class "fl w-100 w-75-l pv0 mv0"
         (div :class "fl w-100 mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :6)
           (div :class "cover pv5 pv6-l pic6 grow pointer"))
         (div :class "fl w-25 mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :7)
           (div :class "cover pv5 pv6-m pv7-l pic7 grow pointer"))
         (div :class "fl w-75 pl2 pl4-l mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :8)
           (div :class "cover pv5 pv6-m pv7-l pic8 grow pointer"))
         (div :class "fl w-100 mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :9)
           (div :class "cover pv5 pv6-ns pic9 grow pointer"))))))

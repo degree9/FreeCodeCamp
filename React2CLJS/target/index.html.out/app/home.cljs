@@ -1,14 +1,21 @@
-(ns app.home (:require [javelin.core :refer [->Cell input? cell cell? destroy-cell! lift lens? set-formula! cell-doseq* deref* set-cell! lens formula? alts! dosync* cell-map formula]] [hoplon.jquery :refer [check-val! text-val!]] [hoplon.core :refer [form audio input menuitem hgroup do! timeout $text base h1 set-attributes! embed shadow h3 body keygen progress main cite on-page-load i p nav ruby a menu blockquote img $comment span track data u dl select html thead del fieldset aside figure figcaption q on! bdi append-child! video address caption dd rp hr tbody table html-var add-initfn! pre ul replace-child! html-time html-map sup dfn sub mark script button wbr insert-before! strong li dt rtc td tr section th optgroup bust-cache iframe remove-child! legend em kbd spliced html-object article abbr template multicol prerendering? <!-- source output set-styles! route-cell header datalist tfoot s ins footer title h5 canvas param div option summary samp small style textarea loop-tpl* h4 head ol details col label picture rt when-dom h6 link page-load colgroup meter html-meta static-elements bdo --> b code dialog noframes do-watch noscript safe-nth h2 area br]]) (:require-macros [javelin.core :refer [with-let mx2 dosync cell= set-cell!= prop-cell cell-doseq defc cell-let-1 defc= macroexpand-all mx cell-let]] [hoplon.core :refer [text elem+ cache-key with-timeout defelem+ when-tpl static sexp defelem elem def-values if-tpl cond-tpl with-page-load for-tpl with-dom case-tpl loop-tpl with-interval with-init!]]))
+(ns app.home (:require [hoplon.jquery] [hoplon.bidi :as bidi] [app.routing :as routing] [javelin.core :refer [->Cell input? cell cell? destroy-cell! lift lens? set-formula! cell-doseq* deref* set-cell! lens formula? alts! dosync* cell-map formula]] [hoplon.jquery :refer [check-val! text-val!]] [hoplon.core :refer [form audio input menuitem hgroup do! timeout $text base h1 set-attributes! embed shadow h3 body keygen progress main cite on-page-load i p nav ruby a menu blockquote img $comment span track data u dl select html thead del fieldset aside figure figcaption q on! bdi append-child! video address caption dd rp hr tbody table html-var add-initfn! pre ul replace-child! html-time html-map sup dfn sub mark script button wbr insert-before! strong li dt rtc td tr section th optgroup bust-cache iframe remove-child! legend em kbd spliced html-object article abbr template multicol prerendering? <!-- source output set-styles! route-cell header datalist tfoot s ins footer title h5 canvas param div option summary samp small style textarea loop-tpl* h4 head ol details col label picture rt when-dom h6 link page-load colgroup meter html-meta static-elements bdo --> b code dialog noframes do-watch noscript safe-nth h2 area br]]) (:require-macros [javelin.core :refer [with-let mx2 dosync cell= set-cell!= prop-cell cell-doseq defc cell-let-1 defc= macroexpand-all mx cell-let]] [hoplon.core :refer [text elem+ cache-key with-timeout defelem+ when-tpl static sexp defelem elem def-values if-tpl cond-tpl with-page-load for-tpl with-dom case-tpl loop-tpl with-interval with-init!]]))
+
+
+
 
 (defelem index [attr kids]
   (main :class [:w-100 :cf :helvetica :dark-gray :bg-white :pa3 :pa4-m :pa5-l :mw9 :center]
     (div :class [:fl :w-50 :pr2 :pr3-l :mb3 :mb4-l]
+         :click #(bidi/route! routing/routes :picture :id :1)
       (div :class [:cover :pv5 :pv6-m :pv7-l :pic1 :grow :pointer]))
     (div :class [:fl :w-50 :w-25-l :pl2 :pr2-m :ph2-l :mb3 :mb4-l]
+         :click #(bidi/route! routing/routes :picture :id :2)
       (div :class "cover pv5 pv6-m pv7-l pic2 grow pointer"))
     (div :class "fl w-50 w-50 w-25-l pr2 pr0-l pl3-l mb3 mb4-l"
+         :click #(bidi/route! routing/routes :picture :id :3)
       (div :class "cover pv5 pv6-m pv7-l pic3 grow pointer"))
     (div :class "fl w-50 w-50 w-25-l pl2 pl0-l pr2-m pr4-l mb3 mb4-l"
+         :click #(bidi/route! routing/routes :picture :id :4)
       (div :class "cover pv5 pv6-m pv7-l pic4 grow pointer"))
     (div :class "fl w-100 w-50-l pr2-l pl2-ns mb4 mb0-l mb4 outline"
       (div :class [:pa4])
@@ -25,6 +32,7 @@
           in the nature of the project.")))
     (div :class "cf"
       (div :class "fl w-100 w-25-l pl3-l mb3 mb4-l"
+           :click #(bidi/route! routing/routes :picture :id :5)
         (div :class "cover pv5 pv6-m pv7-l pic5 grow pointer"))
       (div :class [:fl :w-100 :w-25-l :pr3-l]
         (p :class "lh-copy measure f6 pt3 pt0-l mt0 mb3 mb4-l center"
@@ -57,10 +65,14 @@
           than a constricting device."))
       (div :class "fl w-100 w-75-l pv0 mv0"
         (div :class "fl w-100 mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :6)
           (div :class "cover pv5 pv6-l pic6 grow pointer"))
         (div :class "fl w-25 mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :7)
           (div :class "cover pv5 pv6-m pv7-l pic7 grow pointer"))
         (div :class "fl w-75 pl2 pl4-l mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :8)
           (div :class "cover pv5 pv6-m pv7-l pic8 grow pointer"))
         (div :class "fl w-100 mb2 mb4-l"
+             :click #(bidi/route! routing/routes :picture :id :9)
           (div :class "cover pv5 pv6-ns pic9 grow pointer"))))))
