@@ -33,7 +33,7 @@
 (defc enlarge nil)
 
 (defelem index [attr kids]
-  (main :class (cell= (conj [bg] :cf :pa3 :pa4-m :pa5-l :mw-100 :min-vh-100 :center))
+  (main :class (cell= (when bg (conj [bg] :cf :pa3 :pa4-m :pa5-l :mw-100 :min-vh-100 :center)))
     (div :class "fr w-100 w-80-l"
       (p :class "f6" "Beitrage zut")
       (a :class "link dim black hover-mid-gray"
@@ -53,12 +53,12 @@
       (div :class "fl-ns w-50-m w-20-l pr3-m pr5-l"
         (p "Swiss Institute for Art Research")))
     (if-tpl enlarge
-      (div :class (cell= (conj [bg] :absolute :top-0 :right-0 :bottom-0 :left-0 :w-100 :z-999))
-        (img :src image
+      (div :class (cell= (when bg (conj [bg] :absolute :top-0 :right-0 :bottom-0 :left-0 :w-100 :z-999)))
+        (img :src (cell= (or image ""))
              :click #(swap! enlarge not)
              :class "absolute top-0 right-0 bottom-0 left-0 w-100 pointer"
              :role "presentation"))
-        (img :src image
+        (img :src (cell= (or image ""))
              :click #(swap! enlarge not)
              :class "db center grow pointer dim"
              :role "presentation"))))
